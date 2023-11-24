@@ -1,0 +1,23 @@
+<!-- navbar.component.html -->
+
+<div class="navbar">
+  <div class="logo">
+    <img src="{{ logoPath }}" alt="Logo">
+    <span>{{ clubName }}</span>
+  </div>
+  <div class="nav-links">
+    <a routerLink="/">Home</a>
+  
+    <div class="sub-heading">Semesters
+    <div class="sub-nav" *ngIf="subNavItems && subNavItems.length > 0">
+      
+      <a *ngFor="let item of subNavItems" [routerLink]="['/semesters',item.id]">{{ item.label }}</a>
+    </div>
+  </div>
+  <a routerLink="/feedback">Feedback</a>
+  <a routerLink="/about">About</a>
+    <!-- Add more main nav links as needed -->
+
+    
+  </div>
+</div>

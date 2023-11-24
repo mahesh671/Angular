@@ -1,0 +1,13 @@
+.custom-container {
+    border: 1px solid #ccc; /* Border color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    padding: 20px; /* Adjust padding as needed */
+  }
+
+ .slide-img {
+    width: 100%;
+    height: 70px; /* Maintain aspect ratio */
+  }
+
+
+  
