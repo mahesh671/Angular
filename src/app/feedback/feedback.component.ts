@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {FeedBackFormServiceService} from '../services/feed-back-form-service.service';
+import { MatDialog } from '@angular/material';
+import { NotificationsComponent } from '../notifications/notifications.component';
 
 @Component({
   selector: 'app-feedback',
@@ -10,7 +12,7 @@ import {FeedBackFormServiceService} from '../services/feed-back-form-service.ser
 export class FeedbackComponent implements OnInit {
   feedbackForm: FormGroup;
 
-  constructor(private fb: FormBuilder,private fbservice:FeedBackFormServiceService) {
+  constructor(private fb: FormBuilder,private fbservice:FeedBackFormServiceService,private dialog:MatDialog) {
     this.createForm();
   }
 
@@ -33,7 +35,11 @@ export class FeedbackComponent implements OnInit {
         // Handle successful submission, e.g., show a success message
       },
       (error) => {
-        alert('Error submitting feedback:'+ error);
+        this.dialog.open(NotificationsComponent,{
+        
+          data: error.message
+        })
+        
         // Handle error, e.g., show an error message
       }
     );

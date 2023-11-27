@@ -1,0 +1,27 @@
+<div class="card-container">
+  <mat-card *ngFor="let semester of semesters" class="card-body border shadow">
+    <mat-card-header>
+      <h5 class="mx-auto">{{ semester.title }}</h5>
+    </mat-card-header>
+    <div class="row">
+      <div class="col-md-4">
+        
+        <mat-card-content>
+          <img [src]="semester.img" alt="{{ semester.title }}" class="card-img">
+        </mat-card-content>
+      </div>
+
+      <div class="col-md-8 mt-5 border-0">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <ul class="card-list">
+              <li *ngFor="let item of semester.subjectCode; let i = index" class="subjects">
+                <a routerLink="./{{semester.subjectCode[i]}}">{{semester.subjectName[i]}}</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </mat-card>
+</div>

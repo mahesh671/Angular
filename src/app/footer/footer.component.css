@@ -4,9 +4,10 @@ footer {
     color: white;
     padding: 20px;
     text-align: center;
-    position: fixed;
-    bottom: 0;
+    position: relative;
+   bottom: 0;
     width: 100%;
+    margin-bottom: 0;
   }
   
   .social-media a {
@@ -19,7 +20,4 @@ footer {
     margin-top: 10px;
     font-size: 0.8em;
   }
-  /* footer.component.css */
-footer {
 
-}

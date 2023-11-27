@@ -14,6 +14,11 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { MatCardModule } from '@angular/material/card';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CardComponent } from './card/card.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -24,7 +29,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     AboutComponent,
     SemesterComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    CardComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +40,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     CarouselModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    FormsModule,
+    MatInputModule
+  ],
+  entryComponents: [
+    NotificationsComponent, // add this line
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-semester',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./semester.component.css']
 })
 export class SemesterComponent implements OnInit {
-
-  constructor() { }
+  semesterNumber: number;
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      // Extract the semester number from the route parameters
+      this.semesterNumber = +params['id'];
+    });
   }
 
 }

@@ -1,0 +1,26 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: auto;
+    margin: 1% 1% 1% 1%;
+    box-sizing: border-box;
+    border-radius: 5%;
+  }
+
+ 
+  .card-img
+  {
+    height: 26%;
+  }
+
+  .subjects
+  {
+    font-size: 20px;
+    font-style: oblique;
+    /* margin: 2% 3% 1% 5%; */
+    
+  }
+  .subjects a
+  {
+    color: black;
+  }
