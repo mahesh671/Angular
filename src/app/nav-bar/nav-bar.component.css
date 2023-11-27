@@ -60,3 +60,10 @@
 .sub-nav a:hover {
   background-color: #34495e;
 }
+#sembtn
+{
+  border-style: none;
+  background: local;
+  color: #fff;
+  font-size: 10;
+}

@@ -1,4 +1,4 @@
-<!-- navbar.component.html -->
+<!-- navbar.component.html
 
 <div class="navbar">
   <div class="logo">
@@ -16,8 +16,41 @@
   </div>
   <a routerLink="/feedback">Feedback</a>
   <a routerLink="/about">About</a>
-    <!-- Add more main nav links as needed -->
+     Add more main nav links as needed 
 
     
   </div>
-</div>
+</div> -->
+
+
+
+
+<!-- navbar.component.html -->
+
+<mat-toolbar class="navbar">
+  <div class="logo">
+    <img src="{{ logoPath }}" alt="Logo">
+    <span>{{ clubName }}</span>
+  </div>
+
+  <div class="nav-links">
+    <a routerLink="/">Home</a>
+
+    <mat-menu #semesterMenu="matMenu">
+      <ng-container *ngIf="subNavItems && subNavItems.length > 0">
+        <button mat-menu-item *ngFor="let item of subNavItems" [routerLink]="['/semesters', item.id]">
+          {{ item.label }}
+        </button>
+      </ng-container>
+    </mat-menu>
+
+    <button id="sembtn"mat-button [matMenuTriggerFor]="semesterMenu" *ngIf="subNavItems && subNavItems.length > 0">
+      Semesters
+    </button>
+
+    <a mat-button routerLink="/feedback">Feedback</a>
+    <a mat-button routerLink="/about">About</a>
+    <!-- Add more main nav links as needed -->
+  </div>
+</mat-toolbar>
+

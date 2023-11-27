@@ -1,7 +1,7 @@
 <div class="card-container">
   <mat-card *ngFor="let semester of semesters" class="card-body border shadow">
     <mat-card-header>
-      <h5 class="mx-auto">{{ semester.title }}</h5>
+      <h5 class="mx-auto">{{ semester.title }} {{semester.semNo | romanNumeral}}</h5>
     </mat-card-header>
     <div class="row">
       <div class="col-md-4">

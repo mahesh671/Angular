@@ -19,6 +19,9 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { RomanNumeralPipe } from './pipes/roman-numeral.pipe';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 @NgModule({
@@ -31,7 +34,8 @@ import { MatInputModule } from '@angular/material/input';
     SemesterComponent,
     FeedbackComponent,
     CardComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    RomanNumeralPipe
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,10 @@ import { MatInputModule } from '@angular/material/input';
     HttpClientModule,
     MatDialogModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatToolbarModule,
+    MatMenuModule
+
   ],
   entryComponents: [
     NotificationsComponent, // add this line
