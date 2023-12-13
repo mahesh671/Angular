@@ -7,7 +7,7 @@ import { semesterModel } from '../models/semesterModel';
   providedIn: 'root'
 })
 export class SemestersServiceService {
-  private apiUrl = 'http://localhost:8080';
+  private apiUrl = 'http://localhost:8081';
 
   constructor(private http: HttpClient) {}
 

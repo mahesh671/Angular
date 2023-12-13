@@ -12,6 +12,7 @@ import { semesterModel } from '../models/semesterModel';
 })
 export class SemesterComponent implements OnInit {
   semesterNumber: number;
+  courseCode:string;
   semarray :semesterModel[];
   constructor(private route: ActivatedRoute,private semService:SemestersServiceService,private dialog:MatDialog) {}
 
@@ -19,7 +20,16 @@ export class SemesterComponent implements OnInit {
     this.route.params.subscribe(params => {
       // Extract the semester number from the route parameters
       this.semesterNumber = +params['id'];
-      this.fetchSemesters();
+      this.courseCode= params['courseCode']  ;
+      if(this.courseCode==null)
+      {
+        this.fetchSemesters();
+      }
+      else
+      {
+        console.log(this.courseCode+this.semesterNumber);
+      }
+      
     });
     this.route.params.subscribe(params => {
       // Extract the semester number from the route parameters

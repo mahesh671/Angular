@@ -9,11 +9,12 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'semesters/:id', component: SemesterComponent }, // Use dynamic parameter for semester id
-  {path:'feedback',component:FeedbackComponent}
+  {path:'feedback',component:FeedbackComponent},
+  { path: 'semesters/:id/:courseCode', component: SemesterComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{useHash:true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

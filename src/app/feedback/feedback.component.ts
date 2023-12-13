@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {FeedBackFormServiceService} from '../services/feed-back-form-service.service';
 import { MatDialog } from '@angular/material';
 import { NotificationsComponent } from '../notifications/notifications.component';
+import { WRstatus } from '../models/WRStatus';
 
 @Component({
   selector: 'app-feedback',
@@ -30,14 +31,18 @@ export class FeedbackComponent implements OnInit {
     console.log(this.feedbackForm.value);
     this.fbservice.submitFeedback(this.feedbackForm.value).subscribe(
       (response) => {
-        alert('Submission successful:'+ response);
+        this.dialog.open(NotificationsComponent,{
+        
+          data: response
+        })
         this.feedbackForm.reset();
         // Handle successful submission, e.g., show a success message
       },
       (error) => {
+
         this.dialog.open(NotificationsComponent,{
         
-          data: error.message
+          data: {code:'2020', msg:error.msg}
         })
         
         // Handle error, e.g., show an error message

@@ -22,6 +22,9 @@ import { MatInputModule } from '@angular/material/input';
 import { RomanNumeralPipe } from './pipes/roman-numeral.pipe';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import {ModalModule} from 'ngx-bootstrap/modal';
+import { LoginFormComponent } from './login-form/login-form.component';
+
 
 
 @NgModule({
@@ -35,7 +38,8 @@ import { MatMenuModule } from '@angular/material/menu';
     FeedbackComponent,
     CardComponent,
     NotificationsComponent,
-    RomanNumeralPipe
+    RomanNumeralPipe,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
@@ -49,11 +53,13 @@ import { MatMenuModule } from '@angular/material/menu';
     FormsModule,
     MatInputModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    ModalModule.forRoot()
 
   ],
   entryComponents: [
-    NotificationsComponent, // add this line
+    NotificationsComponent,
+    LoginFormComponent // add this line
   ],
   providers: [],
   bootstrap: [AppComponent]
